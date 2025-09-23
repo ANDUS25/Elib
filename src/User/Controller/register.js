@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import createHttpError from "http-errors";
-import jwt from "jwt";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 import { userModel } from "../userModel.js";
-import { config } from "../../config/config";
+import { config } from "../../config/config.js";
 
 const userRegisterController = async (req, res, next) => {
   const { email, password } = req.body;

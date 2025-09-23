@@ -3,6 +3,7 @@ import createHttpError from "http-errors";
 
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
 import userRouter from "./User/userRouter.js";
+import bookRouter from "./Book/BookRouter.js";
 
 const app = Express();
 
@@ -18,7 +19,11 @@ app.get("/error", () => {
   throw errorHandler;
 });
 
+// Routes for user creation and registration
 app.use("/api/Users", userRouter);
+
+// Routes for book CRUD operation
+app.use("/api/Books", bookRouter);
 
 // Global error handler
 // no need to call it. express will call itself when required.
