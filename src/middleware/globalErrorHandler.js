@@ -1,6 +1,6 @@
 import { config } from "../config/config.js";
 
-const globalErrorHandler = (error, req, res, next) => {
+const globalErrorHandler = (error, req, res) => {
   const errorHandler = error.statusCode || 500;
 
   // error.stack contains all the information of the error. file, line number, which type of error is it.

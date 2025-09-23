@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 // This is a sync function so we can directly pass the error and global error handler will catch it.
-app.get("/error", (req, res) => {
+app.get("/error", () => {
   const errorHandler = createHttpError(404, "Not data found.");
   throw errorHandler;
 });
