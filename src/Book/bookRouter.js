@@ -12,11 +12,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirName = dirname(__filename);
 
 // we are using Multer as a middleware because express don't accept the file as a json it's a special type of data which can only handle by multer
-
 const uploadFile = multer({
   // destination is for where to store file,need to give path
   dest: path.resolve(__dirName, "../../Public/data/books"),
-  limits: { fileSize: 20 * 1204 * 1024 },
+  limits: { fileSize: 20000000 },
 });
 
 // upload.fields is for multiple file as here we are sharing 2 file main file and coverImage.
